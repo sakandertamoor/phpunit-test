@@ -4,20 +4,25 @@ use PHPUnit\Framework\TestCase;
 
 class QueueTest extends TestCase
 {
-    public function testNewQueueIsEmpty(){
-        $queue = new Queue();
-        $this>self::assertEquals(0, $queue->getCount());
+    protected $queue;
+    protected function setUp(): void
+    {
+       $this->queue = new Queue();
     }
+
+    public function testNewQueueIsEmpty(){
+        $this>self::assertEquals(0, $this->queue->getCount());
+    }
+
     public function testAnItemIsAddedToTheQueue(){
-        $queue = new Queue();
-        $queue->push('sakander');
-        $this>self::assertEquals(1, $queue->getCount());
+        $this->queue->push('sakander');
+        $this>self::assertEquals(1, $this->queue->getCount());
+
     }
     public function testAnItemIsRemovedToTheQueue(){
-        $queue = new Queue();
-        $queue->push('sakander');
-        $item = $queue->pop();
-        $this>self::assertEquals(0, $queue->getCount());
+        $this->queue->push('sakander');
+        $item = $this->queue->pop();
+        $this>self::assertEquals(0, $this->queue->getCount());
         $this>self::assertEquals('sakander', $item);
     }
 
