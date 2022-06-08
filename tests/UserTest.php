@@ -9,12 +9,10 @@ class UserTest extends TestCase
         $user->first_name = "Sakander";
         $user->surname = "Tamoor";
         $this->assertEquals('Sakander Tamoor', $user->getFullName());
-
     }
-    public function tesFullNameIsEmptyByDefault(){
+    public function testFullNameIsEmptyByDefault(){
         $user = new User;
         $this->assertEquals('', $user->getFullName());
-
     }
 
 

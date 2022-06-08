@@ -12,7 +12,7 @@ class FunctionTest extends TestCase
     }
     public function testAddDoesNotReturnsTheCorrectSum()
     {
-        $this->assertNotEquals(4, add(2,2));
+        $this->assertNotEquals(5, add(2,2));
     }
 
 }
